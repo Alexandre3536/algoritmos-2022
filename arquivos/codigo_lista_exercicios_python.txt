@@ -1,0 +1,50 @@
+nome=input("Qual é o seu nome?")
+
+
+import os
+
+ano_atual = int (input ('Digite o valor do ano atual: '))
+ano_de_nascimento = int (input ('Digite o valor do ano de nascimento: '))
+dia_atual = int (input ('Digite o valor do dia atual: '))
+dia_de_nascimento = int (input ('Digite o valor do dia de nascimento: '))
+mes_atual = int (input ('Digite o valor do mes atual: '))
+mes_de_nascimento = int (input ('Digite o valor do mes de nascimento: '))
+idade=ano_atual-ano_de_nascimento
+if mes_de_nascimento>mes_atual or (mes_de_nascimento==mes_atual and dia_de_nascimento>dia_atual):
+    idade=idade-1
+print("Olá",nome,'você tem ' ,idade,"anos")
+
+
+
+
+
+while True:
+
+    
+
+    nota1 = float(input("Insira a nota 1: "))
+    while nota1 < 0 or nota1 > 10:
+        print("Nota invalida, digite um numero entre 0 e 10")
+        nota1 = float(input("Insira a nota 1: "))
+
+    nota2 = float(input("Insira a nota 2: "))
+    while nota2 < 0 or nota2 > 10:
+        print("Nota invalida, digite um numero entre 0 e 10")
+        nota2 = float(input("Insira a nota 2: "))
+
+    nota3 = float(input("Insira a nota 3: "))
+    while nota3 < 0 or nota3 > 10:
+        print("Nota invalida, digite um numero entre 0 e 10")
+        nota3 = float(input("Insira a nota 3: "))
+
+    media = ((nota1 * 2) + (nota2 * 4) + (nota3 * 6)) / 12
+    print(media)
+
+
+
+custo = float( input("Informe o custo de fábrica:\n ")  )
+
+distribuidor = custo * 0.28
+imposto=custo * 0.45
+total=custo+distribuidor+imposto
+print(total)

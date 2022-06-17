@@ -1,0 +1,77 @@
+1. Faça um programa que preencha uma matriz M (2 X 2), calcule e mostre a matriz R, resultante da multiplicação dos elementos de M pelo seu maior elemento
+ RESOLUÇÃO
+
+#coding: utf-8
+M = [[0,0],[0,0]]
+for i in range(2):
+    for j in range(2):
+             M[i][j] = float(input("Digite um número: "))
+maior = M[0][0]
+for i in range(2):
+       for j in range(2):
+             if M[i][j] > maior:
+                   maior = M[i][j]
+R = [[0,0],[0,0]]
+for i in range(2):
+       for j in range(2):
+             R[i][j] = maior * M[i][j]
+for i in range(2):
+       for j in range(2):
+             print(R[i][j])
+
+2. Faça um programa que preencha uma matriz 10 X 3 com as notas de dez alunos em três provas. O programa deverá mostrar um relatório com o número dos alunos (linha) e a prova em que cada aluno obteve a menor nota. Ao final do relatório, deverá mostrar quantos alunos tiveram menor nota em cada uma das provas: na prova 1, prova 2 e prova 3
+
+RESOLUÇÃO
+
+#coding: utf-8
+notas = []
+for i in range(10):
+    linha = [0] * 3
+    notas.append(linha)
+
+for i in range(10):
+    for j in range(3):
+        notas[i][j] = float(input("Digite a nota %d do aluno %d: "% (j
++1,i+1)))
+q1 = 0
+q2 = 0
+q3 = 0
+
+for i in range(10):
+    menor = notas[i][0]
+    menor_p = 0
+    for j in range(3):
+        if notas[i][j] < menor:
+             menor = notas[i][j]
+             menor_p = j
+    print(i, menor_p)
+    if menor_p == 0:
+        q1 += 1
+    if menor_p == 1:
+        q2 += 1
+    if menor_p == 2:
+        q3 += 1
+print(q1, q2, q3)
+
+3. Crie um programa que preencha uma matriz 10X20 com números inteiros e some cada umas das linhas, armazenando o resultado das somas em um vetor. A seguir, o programa deverá multiplicar cada elemento da matriz pela soma da linha correspondente e mostrar a matriz resultante.
+
+RESOLUÇÃO
+
+import random
+
+mat = [ [0]*20 ] * 10
+soma = [0]*10
+
+for i in range(0,10):
+  for j in range(0,20):
+    mat[i][j] = random.randint(1,10) #preenchi com valores aleatórios para não ter que digitar todos
+    soma[i] = soma[i] + mat[i][j]
+
+
+for i in range(0,10):
+  for j in range(0,20):
+    mat[i][j] = mat[i][j] * soma[i]
+
+for i in range(0,10):
+  for j in range(0,20):
+    print(f"{i} - {j}:", mat[i][j])

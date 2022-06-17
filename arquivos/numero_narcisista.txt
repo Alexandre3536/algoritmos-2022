@@ -1,0 +1,10 @@
+num = input("Digite um número:")
+power = len(num)
+a=[]
+for i in num:
+  i=int(i)
+  a.append(i**power)
+if int(num) == sum(a):
+  print(num, "é um número narcisista")
+else:
+  print(num, "não é um número narcisista")
